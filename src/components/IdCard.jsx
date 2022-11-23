@@ -1,6 +1,7 @@
 const IdCard = (props) => {
   console.log('props', props);
   const { picture, name, firstName, lastName, gender, height, birth } = props;
+  const dateStr = String(birth).split(' ').splice(0, 4).join(' ');
   return (
     <div className="idCard">
       <div className="idImg">
@@ -19,7 +20,7 @@ const IdCard = (props) => {
         <b>Height:</b> {height}m
       </p>
       <p>
-        <b>Birth:</b> {birth.toString()}
+        <b>Birth:</b> {dateStr}
       </p>
     </div>
   );

@@ -15,9 +15,9 @@ const Greetings = (props) => {
     }
   };
   return (
-    <>
-      <span>{getGreeting(lang)}</span>
-    </>
+    <div className="lang">
+      <span>{getGreeting(lang) + ' ' + children}</span>
+    </div>
   );
 };
 
