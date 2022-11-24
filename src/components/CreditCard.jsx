@@ -9,7 +9,6 @@ const CreditCard = (props) => {
     bank,
     owner,
     bgColor,
-    color,
   } = props;
   const hide = '**** **** ****' + number.substr(-4);
   return (
