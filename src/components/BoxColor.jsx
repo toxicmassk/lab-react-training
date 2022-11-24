@@ -1,10 +1,14 @@
-const BoxColor = ({ r, g, b }) => {
+const BoxColor = ({ r, g, b, children, bgColor }) => {
+  const cssColor = bgColor ? bgColor : `rgb(${r} ${g} ${b})`;
   const style = {
-    backgroundColor: `rgb(${r} ${g} ${b})`,
-    width: '300px',
-    height: '300px',
+    backgroundColor: cssColor,
+    border: 'solid 3px black',
   };
-  return <div style={style}></div>;
+  return (
+    <div style={style}>
+      {children} ({r},{g},{b})
+    </div>
+  );
 };
 
 export default BoxColor;
