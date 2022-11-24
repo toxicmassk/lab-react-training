@@ -16,7 +16,9 @@ const Greetings = (props) => {
   };
   return (
     <div className="lang">
-      <span>{getGreeting(lang) + ' ' + children}</span>
+      <span>
+        {getGreeting(lang)} {children}
+      </span>
     </div>
   );
 };

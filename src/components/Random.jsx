@@ -1,11 +1,11 @@
-const Random = (props) => {
-  const randomNumber = Math.floor(
-    Math.random() * (props.max - props.min) + props.min
-  );
+// type randomProps = { min:number, max:number }; _typescript
+
+const Random = ({ min, max }) => {
+  const randomNumber = Math.floor(Math.random() * (max - min) + min);
 
   return (
     <p>
-      Random value between {props.min} and {props.max} = {randomNumber}{' '}
+      Random value between {min} and {max} = {randomNumber}
     </p>
   );
 };
