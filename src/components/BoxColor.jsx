@@ -4,11 +4,7 @@ const BoxColor = ({ r, g, b, children, bgColor }) => {
     backgroundColor: cssColor,
     border: 'solid 3px black',
   };
-  return (
-    <div style={style}>
-      {children} ({r},{g},{b})
-    </div>
-  );
+  return <div style={style}>{children ? children : cssColor} </div>;
 };
 
 export default BoxColor;

@@ -1,4 +1,6 @@
 import BoxColor from './BoxColor';
+import visaImage from './../assets/images/visa.png';
+import mastercardImage from './../assets/images/matsercard.png';
 
 const CreditCard = (props) => {
   const {
@@ -11,12 +13,21 @@ const CreditCard = (props) => {
     bgColor,
   } = props;
   const hide = '**** **** ****' + number.substr(-4);
+  const normalizeNumber = (value) => {
+    return String(value).padStart(2, '0').slice(-2);
+  };
+
   return (
     <BoxColor bgColor={bgColor}>
       <p> {type} </p>
+      <img
+        src="{type === 'Visa'?  visaImage : mastercardImage }"
+        alt="{type}"
+      />
       {hide}
       <p>
-        Expires {expirationMonth} / {expirationYear} {bank}
+        Expires {normalizeNumber(expirationMonth)} /
+        {normalizeNumber(expirationYear)} {bank}
       </p>
       <p>{owner}</p>
     </BoxColor>

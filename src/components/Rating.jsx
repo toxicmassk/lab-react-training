@@ -1,7 +1,8 @@
 const Rating = (props) => {
-  const rate = Math.round(props.children);
+  const fullStarCount = Math.round(Number(props.children));
+  const emptyStarCount = 5 - fullStarCount;
 
-  return <div>{rate}</div>;
+  return <div>{'★'.repeat(fullStarCount) + '☆'.repeat(emptyStarCount)}</div>;
 };
 
 export default Rating;
