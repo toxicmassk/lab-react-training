@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Rating from '../components/Rating';
 const DriverCard = (props) => {
   const { name, rating, img, car } = props;
   const { licensePlate, model } = car;
@@ -11,11 +11,11 @@ const DriverCard = (props) => {
       </div>
       <span>{name}</span>
       <br />
-      <span>{rating}</span>
-      <br />
       <span>
-        {licensePlate}
-        {model}
+        <Rating>{rating}</Rating>
+      </span>
+      <span>
+        {model}-{licensePlate}
       </span>
     </div>
   );
